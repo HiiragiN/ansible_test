@@ -2,6 +2,8 @@
 - name: Install latest Apache on RHEL
   hosts: all
   become: yes
+  vars:
+    ansible_python_interpreter: /usr/bin/python
 
   tasks:
     - name: Update package cache
