@@ -2,15 +2,8 @@
 - name: Install latest Apache on RHEL
   hosts: all
   become: yes
-  vars:
-    ansible_python_interpreter: /usr/bin/python3
 
   tasks:
-    - name: dnf-install-python3-dnf
-      ansible.builtin.dnf:
-        name: python3-dnf
-        state: present
-        
     - name: Update package cache
       yum:
         name: '*'
