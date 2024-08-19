@@ -1,19 +1,18 @@
 ---
-- name: Apache server installed
+- name: Install latest Apache on RHEL
   hosts: all
   become: yes
 
   tasks:
-  - name: latest Apache version installed
-    yum:
-      name: httpd
-      state: latest
+    - name: Update package cache
+      yum:
+        name: '*'
+        update_cache: yes
 
-  - name: Apache enabled and running
-    service:
-      name: httpd
-      enabled: true
-      state: started
+    - name: Install latest Apache
+      yum:
+        name: httpd
+        state: latest
 
   - name: copy web.html
     copy:
