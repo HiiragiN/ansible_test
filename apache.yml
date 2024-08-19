@@ -1,6 +1,6 @@
 ---
 - name: Install latest Apache on RHEL
-  hosts: all
+  hosts: localhost
   become: yes
 
   tasks:
