@@ -1,14 +1,9 @@
 ---
 - name: Apache server installed
-  hosts: localhost
+  hosts: all
   become: yes
 
   tasks:
-  - name: python3-dnf-installed
-    yum:
-      name: python3-dnf
-      state: latest
-      
   - name: latest Apache version installed
     yum:
       name: httpd
