@@ -14,7 +14,7 @@
         name: httpd
         state: latest
 
-  - name: copy web.html
-    copy:
-      src: ~/web.html
-      dest: /var/www/index.html
+    - name: copy web.html
+      copy:
+        src: ~/web.html
+        dest: /var/www/index.html
