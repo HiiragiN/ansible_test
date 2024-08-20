@@ -5,12 +5,12 @@
 
   tasks:
     - name: Update package cache
-      yum:
+      dnf:
         name: '*'
         update_cache: yes
 
     - name: Install latest Apache
-      yum:
+      dnf:
         name: httpd
         state: latest
 
