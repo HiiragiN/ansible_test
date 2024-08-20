@@ -2,6 +2,7 @@
 - name: Install latest Apache on RHEL
   hosts: all
   become: yes
+  gather_facts: no
   
   tasks:
     - name: copy web.html
