@@ -2,29 +2,9 @@
 - name: Install latest Apache on RHEL
   hosts: all
   become: yes
-  vars:
-    ansible_python_interpreter: /usr/libexec/platform-python
-
+  
   tasks:
-    - name: Install latest Apache
-      ansible.builtin.yum:
-        name: httpd
-        state: present
-
-    - name: Start and enable Apache service
-      ansible.builtin.systemd:
-        name: httpd
-        state: started
-        enabled: yes
-
     - name: copy web.html
       copy:
         src: ~/web.html
         dest: /var/www/html/index.html  # デフォルトのドキュメントルートに変更
-
-    - name: Allow HTTP traffic through Firewalld
-      ansible.builtin.firewalld:
-        service: http
-        permanent: yes
-        state: enabled
-        immediate: yes
