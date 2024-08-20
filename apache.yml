@@ -7,5 +7,5 @@
   tasks:
     - name: copy web.html
       copy:
-        src: ~/web.html
+        src: /home/azureuser/web.html
         dest: /var/www/html/index.html  # デフォルトのドキュメントルートに変更
