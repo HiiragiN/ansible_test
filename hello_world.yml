@@ -1,0 +1,14 @@
+---
+- name: Hello World Playbook
+  hosts: localhost
+  tasks:
+    - name: Create Python script
+      copy:
+        content: |
+          #!/usr/bin/env python3
+          print("Hello, World!")
+        dest: /tmp/hello_world.py
+        mode: '0755' 
+
+    - name: Execute Python script
+      command: python3 /tmp/hello_world.py
