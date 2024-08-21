@@ -1,11 +1,15 @@
 ---
-- name: Install latest Apache on RHEL
+- name: Install Apache on RHEL 9.3
   hosts: localhost
   become: yes
-  gather_facts: no
-  
   tasks:
-    - name: copy web.html
-      copy:
-        src: ~/web.html
-        dest: /var/www/html/index.html  # デフォルトのドキュメントルートに変更
+    - name: Install Apache
+      ansible.builtin.yum:
+        name: httpd
+        state: latest
+
+    - name: Start and enable Apache
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: yes
