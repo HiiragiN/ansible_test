@@ -17,7 +17,7 @@
                 else:
                     print(i)
 
-          fizzbuzz(100)  # 1から100までのFizzBuzzを実行
+          fizzbuzz(100)
         dest: /tmp/FizzBuzz.py
         mode: '0755' 
 
