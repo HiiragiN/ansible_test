@@ -1,0 +1,1 @@
+# Ansible-Towerのテスト用リポジトリ
